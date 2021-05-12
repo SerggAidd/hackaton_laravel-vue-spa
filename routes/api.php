@@ -9,6 +9,8 @@ use App\Http\Controllers\Auth\UserController;
 use App\Http\Controllers\Auth\VerificationController;
 use App\Http\Controllers\Settings\PasswordController;
 use App\Http\Controllers\Settings\ProfileController;
+use App\Http\Controllers\ScoreController;
+use App\Http\Controllers\GroupController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,7 +32,20 @@ Route::group(['middleware' => 'auth:api'], function () {
     Route::patch('settings/profile', [ProfileController::class, 'update']);
     Route::patch('settings/password', [PasswordController::class, 'update']);
 
+    Route::get('score/get',[ScoreController::class, 'get']);
+    Route::post('score/create',[ScoreController::class, 'create']);
+    Route::post('score/edit',[ScoreController::class, 'edit']);
+    Route::post('score/delete',[ScoreController::class, 'delete']);
 
+    Route::get('group/get',[GroupController::class, 'get']);
+    Route::post('group/create',[GroupController::class, 'create']);
+    Route::post('group/edit',[GroupController::class, 'edit']);
+    Route::post('group/delete',[GroupController::class, 'delete']);
+
+    Route::get('user/get',[UserController::class, 'get']);
+    Route::post('user/create',[UserController::class, 'create']);
+    Route::post('user/edit',[UserController::class, 'edit']);
+    Route::post('user/delete',[UserController::class, 'delete']);
 });
 
 Route::group(['middleware' => 'guest:api'], function () {
@@ -46,19 +61,6 @@ Route::group(['middleware' => 'guest:api'], function () {
     Route::post('oauth/{driver}', [OAuthController::class, 'redirect']);
     Route::get('oauth/{driver}/callback', [OAuthController::class, 'handleCallback'])->name('oauth.callback');
 
-    Route::get('score/get',[ScoreController::class, 'get']);
-    Route::get('score/create',[ScoreController::class, 'post']);
-    Route::get('score/edit',[ScoreController::class, 'post']);
-    Route::get('score/delete',[ScoreController::class, 'post']);
 
-    Route::get('group/get',[GroupController::class, 'get']);
-    Route::get('group/create',[GroupController::class, 'post']);
-    Route::get('group/edit',[GroupController::class, 'post']);
-    Route::get('group/delete',[GroupController::class, 'post']);
-
-    Route::get('user/get',[UserController::class, 'get']);
-    Route::get('user/create',[UserController::class, 'post']);
-    Route::get('user/edit',[UserController::class, 'post']);
-    Route::get('user/delete',[UserController::class, 'post']);
 
 });

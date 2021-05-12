@@ -3,22 +3,26 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Group;
 
 class GroupController extends Controller
 {
-   public function get(Type $var = null)
+   public function get(Request $request)
+   {
+        return Group :: get();
+   }
+   public function create(Request $request)
+   {
+        $group = new Group();
+        $group->caption = $request->caption;
+        $group = $group->save();
+        return $group;
+   }
+   public function edit(Request $request)
    {
         return 'Hello World';
    }
-   public function create(Type $var = null)
-   {
-        return 'Hello World';
-   }
-   public function edit(Type $var = null)
-   {
-        return 'Hello World';
-   }
-   public function delete(Type $var = null)
+   public function delete(Request $request)
    {
         return 'Hello World';
    }
