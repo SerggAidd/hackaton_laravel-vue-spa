@@ -24,11 +24,6 @@ export default {
         this.$router.push({name: 'groups'})
     });
     },
-    //deleteGroup(){
-    //  axios.post('/api/group/delete',this.group).then((res) =>{
-    //    this.$router.push({name: 'groups'})
-    //});
-    //},
   },
 };
 </script>

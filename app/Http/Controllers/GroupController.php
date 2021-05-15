@@ -13,10 +13,10 @@ class GroupController extends Controller
    }
    public function create(Request $request)
    {
-        $group = new Group();
-        $group->caption = $request->caption;
-        $group = $group->save();
-        return $group;
+     $group = new Group();
+     $group->caption = $request->caption;
+     $group = $group->save();
+     return $group;
    }
    public function edit(Request $request)
    {
@@ -24,6 +24,9 @@ class GroupController extends Controller
    }
    public function delete(Request $request)
    {
-        return 'Hello World';
+     $group = new Group();
+     $group->id = $request->id;
+     $group = $group->save();
+     return $group;
    }
 }
