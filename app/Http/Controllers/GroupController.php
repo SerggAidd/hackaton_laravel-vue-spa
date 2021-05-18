@@ -21,12 +21,26 @@ class GroupController extends Controller
    public function edit(Request $request)
    {
         return 'Hello World';
-   }
+   }            
    public function delete(Request $request)
-   {
-     $group = new Group();
-     $group->id = $request->id;
-     $group = $group->save();
-     return $group;
-   }
+     {
+          $res = Group::where('id',$request->id)->delete();
+          return $res;
+     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

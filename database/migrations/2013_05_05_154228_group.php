@@ -14,7 +14,7 @@ class Group extends Migration
     public function up()
     {
         Schema::create('groups', function (Blueprint $table) {
-            $table->id();
+            $table->id()->auto_increment;
             $table->string('caption');
         });
     }

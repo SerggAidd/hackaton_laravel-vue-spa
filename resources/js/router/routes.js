@@ -13,8 +13,11 @@ export default [
   { path: '/email/resend', name: 'verification.resend', component: page('auth/verification/resend.vue') },
 
   { path: '/home', name: 'home', component: page('home.vue') },
+  
   { path: '/groups', name: 'groups', component: page('groups/groups.vue') },
   { path: '/groups/create', name: 'groups.create', component: page('groups/create_group.vue') },
+  { path: '/users', name: 'users', component: page('users/users.vue') },
+  { path: '/users/create', name: 'users.create', component: page('users/create_user.vue') },
   {
     path: '/settings',
     component: page('settings/index.vue'),

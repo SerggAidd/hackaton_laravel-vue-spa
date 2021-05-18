@@ -13,11 +13,13 @@
         <tr v-for="g in groups" :key="g.id">
           <th scope="row">{{ g.id }}</th>
           <td>{{ g.caption }}</td>
-          <td><form @submit.prevent="deleteGroup"><button type="submit" class="btn btn-danger">Удалить</button></form></td>
-          </tr>
+          <td>
+            <button @click="deleteGroup, g" type="submit" class="btn btn-danger">Удалить</button>
+          </td>
+        </tr>
       </tbody>
     </table>
-    <form @submit.prevent="toGroup">
+    <form @submit.prevent="toGroup" action="{'$group->id'}"  method="post">
       <button type="submit" class="btn btn-primary">Добавление группы</button>
     </form>
   </div>
@@ -39,8 +41,8 @@ export default {
     })
   },
   methods:{
-    deleteGroup(){
-        axios.post('/api/group/delete',this.group);
+    deleteGroup(group){
+        axios.post('/api/group/delete', group);
         console.log
     },
     toGroup(){

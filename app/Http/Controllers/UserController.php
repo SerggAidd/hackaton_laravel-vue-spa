@@ -3,24 +3,32 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
+
 
 class UserController extends Controller
 {
-    public function get(Type $var = null)
+    public function get(Request $request)
     {
-         return 'Hello World';
+          return User :: get();
     }
-    public function create(Type $var = null)
+    public function create(Request $request)
     {
-         return 'Hello World';
+     {
+          $user = new User();
+          $user->name = $request->name;
+          $user = $user->save();
+          return $user;
+        }
     }
-    public function edit(Type $var = null)
+    public function edit(Request $request)
     {
-         return 'Hello World';
+          return 'Hello World';
     }
-    public function delete(Type $var = null)
+    public function delete(Request $request)
     {
-         return 'Hello World';
+          $res = User::where('id',$request->id)->delete();
+          return $res;
     }
          
 }
