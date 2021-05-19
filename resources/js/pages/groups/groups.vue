@@ -14,12 +14,12 @@
           <th scope="row">{{ g.id }}</th>
           <td>{{ g.caption }}</td>
           <td>
-            <button @click="deleteGroup, g" type="submit" class="btn btn-danger">Удалить</button>
+            <button @click="deleteGroup (g)" type="button" class="btn btn-danger">Удалить</button>
           </td>
         </tr>
       </tbody>
     </table>
-    <form @submit.prevent="toGroup" action="{'$group->id'}"  method="post">
+    <form @submit.prevent="toGroup" method="post">
       <button type="submit" class="btn btn-primary">Добавление группы</button>
     </form>
   </div>
@@ -42,7 +42,9 @@ export default {
   },
   methods:{
     deleteGroup(group){
-        axios.post('/api/group/delete', group);
+        axios.post('/api/group/delete', group).then((res) =>{
+          this.groups = this.groups.filter((i)=> i.id != group.id)
+          })
         console.log
     },
     toGroup(){
