@@ -15,9 +15,12 @@ class Score extends Migration
     {
         Schema::create('scores', function (Blueprint $table) {
             $table->id();
-            $table->string('caption');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
+            $table->integer('code')->nullable();
+            $table->integer('design')->nullable();
+            $table->integer('gameplay')->nullable();
+            $table->integer('tour');
         });
     }
 

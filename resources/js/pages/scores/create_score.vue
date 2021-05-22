@@ -1,14 +1,15 @@
 <template>
-  <form @submit.prevent="addUser">
+  <form @submit.prevent="addScore">
     <div class="form-user">
-      <label for="exampleInputEmail1">Введитеи имя</label>
-      <input type="text" required class="form-control" v-model="user.name" placeholder="Введите ФИО">
-      <label for="exampleInputEmail1">Введите электронную почту</label>
-      <input type="text" required class="form-control" v-model="user.email" placeholder="Введите email">
-      <label for="exampleInputEmail1">Введите возраст</label>
-      <input type="text" required class="form-control" v-model="user.age" placeholder="Введите Возраст">
-      <select v-model="user.group_id">
-        <option class="form-control" :value="g.id" v-for="g in groups" :key="g.id">{{g.caption}}</option>
+      <label for="exampleInputEmail1">Введите баллы за код</label>
+      <input type="text" required class="form-control" v-model="user.name" placeholder="Введите баллы за код">
+      <label for="exampleInputEmail1">Введите баллы за дизайн</label>
+      <input type="text" required class="form-control" v-model="user.email" placeholder="Введите баллы за дизайн">
+      <label for="exampleInputEmail1">Введите баллы за дисплей</label>
+      <input type="text" required class="form-control" v-model="user.age" placeholder="Введите баллы за геймплей">
+      <label for="exampleInputEmail1">обЪявите пользователя</label>
+      <select v-model="score.user_id">
+        <option class="form-control" :value="u.id" v-for="u in useres" :key="u.id">{{u.name}}</option>
       </select>
     </div>
     <button type="submit" class="btn btn-success">Добавить</button>
@@ -24,17 +25,17 @@ export default {
 
   data: () =>({
     user: {},
-    groups: [],
+    score: {},
   }),
   created(){
-    axios.get('/api/group/get').then((res) =>{
-      this.groups = res.data
+    axios.get('/api/score/get').then((res) =>{
+      this.scores = res.data
     })
   },
   methods:{
-    addUser(){
-      axios.post('/api/user/create',this.user).then((res) =>{
-        this.$router.push({name: 'users'})
+    addScore(){
+      axios.post('/api/score/create',this.user).then((res) =>{
+        this.$router.push({name: 'scores'})
     });
     },
   },

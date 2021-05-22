@@ -18,6 +18,8 @@ export default [
   { path: '/groups/create', name: 'groups.create', component: page('groups/create_group.vue') },
   { path: '/users', name: 'users', component: page('users/users.vue') },
   { path: '/users/create', name: 'users.create', component: page('users/create_user.vue') },
+  { path: '/scores', name: 'scores', component: page('scores/scores.vue') },
+  { path: '/scores/create', name: 'scores.create', component: page('scores/create_score.vue') },
   {
     path: '/settings',
     component: page('settings/index.vue'),
