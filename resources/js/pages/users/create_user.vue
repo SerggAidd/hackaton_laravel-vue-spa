@@ -8,7 +8,7 @@
       <label for="exampleInputEmail1">Введите возраст</label>
       <input type="text" required class="form-control" v-model="user.age" placeholder="Введите Возраст">
       <select v-model="user.group_id">
-        <option class="form-control" :value="g.id" v-for="g in groups" :key="g.id">{{g.caption}}</option>
+        <option class="form-control-lg" :value="g.id" v-for="g in groups" :key="g.id">{{g.caption}}</option>
       </select>
     </div>
     <button type="submit" class="btn btn-success">Добавить</button>

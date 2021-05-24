@@ -28,7 +28,7 @@ class ScoreController extends Controller
     }
     public function delete(Request $request)
     {
-        $res=Scores::where('id',$request->id)->delete();
+        $res=Score::where('id',$request->id)->delete();
         return $res;
     }
 }
