@@ -1,6 +1,6 @@
 <template>
   <div>
-    <table class="table table-light">
+    <table class="table">
       <thead>
         <tr>
           <th scope="col">#</th>

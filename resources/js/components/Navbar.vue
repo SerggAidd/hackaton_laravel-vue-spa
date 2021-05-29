@@ -77,7 +77,7 @@ export default {
   },
 
   data: () => ({
-    appName: "Hackaton individual"//window.config.appName
+    appName: window.config.appName
   }),
 
   computed: mapGetters({
