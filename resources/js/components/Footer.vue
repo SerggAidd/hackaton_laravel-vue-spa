@@ -68,23 +68,9 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
-import LocaleDropdown from './LocaleDropdown'
-
 export default {
-  components: {
-    LocaleDropdown
-  },
-
-  data: () => ({
-    appName: window.config.appName
-  }),
-
-  computed: mapGetters({
-    user: 'auth/user'
-  }),
+  name: 'Footer'
 }
-
 </script>
 
 <style scoped>
