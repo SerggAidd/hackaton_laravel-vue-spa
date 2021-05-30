@@ -9,7 +9,11 @@ class ScoreController extends Controller
 {
     public function get(Request $request)
     {
-        return Score::get();
+        $query= Score::query();
+        if($request->tour && $request->tour >0){
+            $query->where('tour', $request->tour );
+        }
+        return $query->get();
     }
     public function create(Request $request)
     {

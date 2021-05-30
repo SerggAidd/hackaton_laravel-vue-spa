@@ -4,7 +4,7 @@
     <div class="container mt-4">
       <child />
     </div>
-    <footer />
+    <!-- <Footer></Footer> -->
   </div>
 </template>
 
