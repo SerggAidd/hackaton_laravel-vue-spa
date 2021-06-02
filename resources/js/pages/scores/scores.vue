@@ -15,6 +15,9 @@
           <div class="col-3">
             <input v-model="filter.name" placeholder="Введите имя пользователя">
           </div>
+          <div class="col-3">
+            <input v-model="filter.name" placeholder="Введите имя пользователя">
+          </div>
         </div>
         <div class="row">
           <button type="submit" class="btn btn-danger">Фильтр</button>

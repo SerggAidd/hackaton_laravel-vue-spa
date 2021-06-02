@@ -20,7 +20,7 @@ class GroupController extends Controller
    }
    public function edit(Request $request)
    {
-        return 'Hello World';
+        Group::where('id', $request->id)->update(['caption'=>$request->caption]);
    }            
    public function delete(Request $request)
      {
@@ -28,7 +28,6 @@ class GroupController extends Controller
           return $res;
      }
 }
-
 
 
 

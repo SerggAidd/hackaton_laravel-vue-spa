@@ -4,9 +4,9 @@
       <thead>
         <tr>
           <th scope="col">#</th>
-          <th scope="col">First</th>
+          <th scope="col">Название группы</th>
           <th scope="col">Удаление</th>
-          <th scope="col"></th>
+          <th scope="col">Редактирование</th>
         </tr>
       </thead>
       <tbody>
@@ -15,6 +15,9 @@
           <td>{{ g.caption }}</td>
           <td>
             <button @click="deleteGroup (g)" type="button" class="btn btn-danger">Удалить</button>
+          </td>
+          <td>
+            <button @click="editGroup (g)" type="button" class="btn btn-primary">Редактировать</button>
           </td>
         </tr>
       </tbody>
@@ -46,6 +49,9 @@ export default {
           this.groups = this.groups.filter((i)=> i.id != group.id)
           })
         console.log
+    },
+    editGroup(group){
+        this.$router.push({name: 'groups.edit', params: {group: group,},});
     },
     toGroup(){
         this.$router.push({name: 'groups.create'});

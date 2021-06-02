@@ -16,10 +16,13 @@ export default [
   
   { path: '/groups', name: 'groups', component: page('groups/groups.vue') },
   { path: '/groups/create', name: 'groups.create', component: page('groups/create_group.vue') },
+  { path: '/groups/edit', name: 'groups.edit', component: page('groups/edit_group.vue') },
   { path: '/users', name: 'users', component: page('users/users.vue') },
   { path: '/users/create', name: 'users.create', component: page('users/create_user.vue') },
+  { path: '/users/edit', name: 'users.edit', component: page('users/edit_user.vue') },
   { path: '/scores', name: 'scores', component: page('scores/scores.vue') },
   { path: '/scores/create', name: 'scores.create', component: page('scores/create_score.vue') },
+  { path: '/scores/edit', name: 'scores.edit', component: page('scores/edit_score.vue') },
   {
     path: '/settings',
     component: page('settings/index.vue'),
